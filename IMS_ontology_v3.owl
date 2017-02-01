@@ -1,0 +1,783 @@
+@prefix : <http://www.AccessLearner.org/accessible_ocw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix GenericOntology: <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#> .
+@base <http://www.AccessLearner.org/accessible_ocw> .
+
+<http://www.AccessLearner.org/accessible_ocw> rdf:type owl:Ontology ;
+                                               dc:creator "Mirette Elias" ;
+                                               dc:contrib "Steffen Lohmann" ;
+                                               dc:title "Access for Learner" ;
+                                               dc:description "... (to be refined) This ontology i a merge between ACCESSIBLE ontology and IMS ontology" ;
+                                               rdfs:label "AccessLearner Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#Meet
+GenericOntology:Meet rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#TechnologyUsage
+GenericOntology:TechnologyUsage rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#User_has_Disability
+GenericOntology:User_has_Disability rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasAge
+GenericOntology:hasAge rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasEducation
+GenericOntology:hasEducation rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasJob
+GenericOntology:hasJob rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasLocation
+GenericOntology:hasLocation rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasMaritalStatus
+GenericOntology:hasMaritalStatus rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasName
+GenericOntology:hasName rdf:type owl:AnnotationProperty .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#User_has_Disability
+:User_has_Disability rdf:type owl:AnnotationProperty .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#hasMaritalStatus
+:hasMaritalStatus rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.AccessLearner.org/accessible_ocw#AccessMode
+:AccessMode rdf:type owl:ObjectProperty ;
+            rdfs:domain :DigitalResource ;
+            rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Device_linksTo_User
+:Device_linksTo_User rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :User_linksTo_Device .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#User_linksTo_Device
+:User_linksTo_Device rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://www.AccessibleOntology.com/GenericOntology.owl#User> ;
+                     rdfs:range GenericOntology:Device .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeAdapted
+:accessModeAdapted rdf:type owl:ObjectProperty ;
+                   rdfs:domain :DigitalResource ;
+                   rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeOrnamental
+:accessModeOrnamental rdf:type owl:ObjectProperty ;
+                      rdfs:domain :DigitalResource ;
+                      rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeReq
+:accessModeReq rdf:type owl:ObjectProperty ;
+               rdfs:domain :Learner ;
+               rdfs:range :accessModeRequired .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessMode_adaptionRequest
+:accessMode_adaptionRequest rdf:type owl:ObjectProperty ;
+                            rdfs:domain :accessModeRequired ;
+                            rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessMode_existingAccessMode
+:accessMode_existingAccessMode rdf:type owl:ObjectProperty ;
+                               rdfs:domain :accessModeRequired ;
+                               rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetail
+:adaptationDetail rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DigitalResource ;
+                  rdfs:range :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetailReq
+:adaptationDetailReq rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Learner ;
+                     rdfs:range :adaptationDetailRequired .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetail_adaptationRequest
+:adaptationDetail_adaptationRequest rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :adaptationDetailRequired ;
+                                    rdfs:range :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetail_existingAccessMode
+:adaptationDetail_existingAccessMode rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :adaptationDetailRequired ;
+                                     rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMediaReq
+:adaptationMediaReq rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Learner ;
+                    rdfs:range :adaptationMediaRequired .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMediaType
+:adaptationMediaType rdf:type owl:ObjectProperty ;
+                     rdfs:domain :DigitalResource ;
+                     rdfs:range :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMedia_adaptationRequest
+:adaptationMedia_adaptationRequest rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :adaptationMediaRequired ;
+                                   rdfs:range :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMedia_existingAccessMode
+:adaptationMedia_existingAccessMode rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :adaptationMediaRequired ;
+                                    rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationType
+:adaptationType rdf:type owl:ObjectProperty ;
+                rdfs:domain :DigitalResource ;
+                rdfs:range :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationTypeReq
+:adaptationTypeReq rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Learner ;
+                   rdfs:range :adaptationTypeRequired .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationType_adaptationRequest
+:adaptationType_adaptationRequest rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :adaptationTypeRequired ;
+                                  rdfs:range :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationType_existingAccessMode
+:adaptationType_existingAccessMode rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :adaptationTypeRequired ;
+                                   rdfs:range :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#apiInteroperable
+:apiInteroperable rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DigitalResource ;
+                  rdfs:range :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#controlFlexibility
+:controlFlexibility rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range :controlFlexibilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#displayTransformability
+:displayTransformability rdf:type owl:ObjectProperty ;
+                         rdfs:domain :DigitalResource ;
+                         rdfs:range :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#dr_educationalComplexityOfAdaptation
+:dr_educationalComplexityOfAdaptation rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :DigitalResource ;
+                                      rdfs:range :educationalComplexityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#educationalComplexityOfAdaptation
+:educationalComplexityOfAdaptation rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :Learner ;
+                                   rdfs:range :educationalComplexityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#hazard
+:hazard rdf:type owl:ObjectProperty ;
+        rdfs:domain :DigitalResource ;
+        rdfs:range :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#hazardAvoidance
+:hazardAvoidance rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Learner ;
+                 rdfs:range :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#inputRequirements
+:inputRequirements rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Learner ;
+                   rdfs:range :controlFlexibilityValue .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetailRequired
+:adaptationDetailRequired rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Learner .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#atInteroperable
+:atInteroperable rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Learner ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#dr_atInteroperable
+:dr_atInteroperable rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range xsd:boolean .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#dr_educationalLevelOfAdaptation
+:dr_educationalLevelOfAdaptation rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :DigitalResource ;
+                                 rdfs:range xsd:normalizedString .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#dr_languageOfAdaptation
+:dr_languageOfAdaptation rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :DigitalResource ;
+                         rdfs:range xsd:normalizedString .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#educationalLevelOfAdaptation
+:educationalLevelOfAdaptation rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Learner ;
+                              rdfs:range xsd:normalizedString .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#hasAdaptation
+:hasAdaptation rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DigitalResource ;
+               rdfs:range xsd:anyURI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#isAdaptationOf
+:isAdaptationOf rdf:type owl:DatatypeProperty ;
+                rdfs:domain :DigitalResource ;
+                rdfs:range xsd:anyURI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#isFullAdaptationOf
+:isFullAdaptationOf rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range xsd:anyURI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#isPartialAdaptationOf
+:isPartialAdaptationOf rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :DigitalResource .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#languageOfAdaptation
+:languageOfAdaptation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Learner ;
+                      rdfs:range xsd:normalizedString .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#languageOfInterface
+:languageOfInterface rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Learner ;
+                     rdfs:range xsd:normalizedString .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#numCells
+:numCells rdf:type owl:DatatypeProperty ;
+          rdfs:domain <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille> .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#numDots
+:numDots rdf:type owl:DatatypeProperty ;
+         rdfs:domain <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille
+<http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf GenericOntology:Device .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#ScreenMagnifiers
+<http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#ScreenMagnifiers> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf GenericOntology:Device .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#Device
+GenericOntology:Device rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#DigitalResource
+:DigitalResource rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Learner
+:Learner rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.AccessibleOntology.com/GenericOntology.owl#User> .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeRequired
+:accessModeRequired rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeValue
+:accessModeValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessibilityAPI
+:accessibilityAPI rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetailRequired
+:adaptationDetailRequired rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationDetailValue
+:adaptationDetailValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMediaRequired
+:adaptationMediaRequired rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationMediaTypeValue
+:adaptationMediaTypeValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationTypeRequired
+:adaptationTypeRequired rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationTypeValue
+:adaptationTypeValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#controlFlexibilityValue
+:controlFlexibilityValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#displayTransformabilityValue
+:displayTransformabilityValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#educationalComplexityValue
+:educationalComplexityValue rdf:type owl:Class .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#hazardValue
+:hazardValue rdf:type owl:Class .
+
+
+###  http://www.AccessibleOntology.com/GenericOntology.owl#User
+<http://www.AccessibleOntology.com/GenericOntology.owl#User> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.AccessLearner.org/accessible_ocw#ARIAv1
+:ARIAv1 rdf:type owl:NamedIndividual ,
+                 :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#AT-SPI
+:AT-SPI rdf:type owl:NamedIndividual ,
+                 :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#ATK
+:ATK rdf:type owl:NamedIndividual ,
+              :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#AndroidAccessibility
+:AndroidAccessibility rdf:type owl:NamedIndividual ,
+                               :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#BlackberryAccessibility
+:BlackberryAccessibility rdf:type owl:NamedIndividual ,
+                                  :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#ChemML
+:ChemML rdf:type owl:NamedIndividual ,
+                 :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Daisy
+:Daisy rdf:type owl:NamedIndividual ,
+                :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#EPUB3
+:EPUB3 rdf:type owl:NamedIndividual ,
+                :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#JavaAccessibility
+:JavaAccessibility rdf:type owl:NamedIndividual ,
+                            :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#LIT
+:LIT rdf:type owl:NamedIndividual ,
+              :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#LaTeX
+:LaTeX rdf:type owl:NamedIndividual ,
+                :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Learner_1
+:Learner_1 rdf:type owl:NamedIndividual ,
+                    :Learner ;
+           :hazardAvoidance :flashing ;
+           :languageOfAdaptation "Spanish"^^xsd:string ;
+           :languageOfInterface "Spanish"^^xsd:string ;
+           GenericOntology:Meet "Gert (42) lives in Merchtem, Belgium with his wife and suffers from a partly</br>blurred vision since his adolescence. Gert works in orchards during the</br>busy seasons, at other times he stays at home and manages the</br>household. Gert didn&rsquo;t have a lot of problems at school, but never felt a</br>lot for studying. That&rsquo;s why he didn&rsquo;t seek any higher education. He</br>immediately started working and over the years, he has collected a broad</br>range of jobs such as helping out on a construction site or at the city&rsquo;s</br>green service. As long as he can be outdoors and use his hands, Gert is</br>happy to work all day."^^xsd:string ;
+           GenericOntology:TechnologyUsage "Gert has bought himself a laptop, mainly because of its portability and the lack of</br>assistive technologies on public computers. He cannot use the most recent</br>software versions because of the poor compatibility with AT software. </br>Also, his assistive software (RealSpeak and Supernova) is only reimbursed</br>by government every 5 years which is too slow to keep up with</br>technology. Chris is a member of the local dance club. Gert helps her</br>out selecting songs and putting them together in a mix. For the</br>rehearsals, Gert can generate mixes on half the tempo. Especially in the</br>beginning of learning a new choreography, this really comes in handy. </br>Gert did have to search hard for an accessible music player and editor. </br>Popular media players such as Winamp don&rsquo;t work with his assistive</br>technologies. His only option was open source, but these</br>communities do not really excel in documentation and support. It took</br>Gert 6 months to finally find what he needed, and another 2 months to</br>fully learn the possibilities of those programs. Gert doesn&rsquo;t carry his</br>regular cellular phone all the time, but does use it almost daily. Mostly to</br>call and text his wife and friends. He has got a clamshell model which has</br>large, clearly separated buttons. In the beginning he was overwhelmed</br>by the many features that are available on his phone, features</br>he doesn&rsquo;t use or need anyway. Learning the basic functions such as</br>calling and texting didn&rsquo;t take that long. He has got a screen embosser and</br>speech output for his phone, which help him a lot. Occasionally, he</br>downloads an audio book from the Internet and uploads it to his mobile so</br>he can listen to it on location or on the move (train). He likes this since the</br>voices are real; exciting books are read by a human voice, with emotion. </br>What a contrast with the computerized voices he gets when using his</br>assistive technologies."^^xsd:string ;
+           GenericOntology:User_has_Disability :Blurred_Vision ;
+           GenericOntology:hasAge "42"^^xsd:int ;
+           GenericOntology:hasEducation "High school"^^xsd:string ;
+           GenericOntology:hasJob "Employed"^^xsd:string ;
+           GenericOntology:hasLocation "Merchtem, Belgium"^^xsd:string ;
+           GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
+           GenericOntology:hasName "Gert Van Dijk"^^xsd:string .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Learner_2
+:Learner_2 rdf:type owl:NamedIndividual ,
+                    :Learner ;
+           :hazardAvoidance :flashing ;
+           :atInteroperable "true"^^xsd:boolean ;
+           :languageOfAdaptation "English"^^xsd:string ;
+           :languageOfInterface "English"^^xsd:string ;
+           GenericOntology:Meet "Paulina (25) was born blind, and lives in Murcia, Spain. Due to her visual</br>impairment, Paulina was unable to find a job after finishing high</br>school. The only job opportunities she had required her to move, which</br>Paulina and her family didn&rsquo;t like. She started taking guitar lessons</br>and by now she can really play quite well. But it wasn&rsquo;t easy in the</br>beginning. She can&rsquo;t read regular music scores, so she had to resort to</br>music Braille."^^xsd:string ;
+           GenericOntology:TechnologyUsage "Paulina uses her PC (Windows XP) on a daily basis for the text editor to write</br>letters of job applications, and to visit Yahoo and check her emails</br>using Internet Explorer. She tried Hotmail and later Gmail first, but</br>there just was too much information on the page. So she ended up with</br>Yahoo which works quite well with her Jaws screenreader. She also</br>uses OCR software, a Braille embosser and Adobe reader speech output. </br>The combination of all these technologies enables Paulina to use her PC to a</br>satisfactory degree. However, the investments she and her family had to</br>make to acquire all this put quite some pressure on the family budget. The</br>Internet was also an enormous help in finding information, Braille music</br>scores, and mp3 music. Paulina bought herself a smartphone she uses</br>practically all the time. Her choice for a smartphone had a lot to do with</br>the ease of use and the recommendation of a friend, who is also blind. </br>The device has large enough keys that provide lots of tactile feedback when</br>pressed. Paulina uses it to call friends and family, texting, maintain her</br>calendar and listen to audiobooks she downloads from the internet. She</br>uses a VOCA to read her sms messages, but unfortunately the Spanish</br>output often has a faulty pronunciation."^^xsd:string ;
+           GenericOntology:User_has_Disability :Blindness ;
+           GenericOntology:hasAge "25"^^xsd:int ;
+           GenericOntology:hasEducation "High school"^^xsd:string ;
+           GenericOntology:hasJob "Unemployed"^^xsd:string ;
+           GenericOntology:hasLocation "Murcia, Spain"^^xsd:string ;
+           GenericOntology:hasMaritalStatus "Single"^^xsd:string ;
+           GenericOntology:hasName "Paulina Reyes"^^xsd:string .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#MSAA
+:MSAA rdf:type owl:NamedIndividual ,
+               :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#MacOSXAccessibility
+:MacOSXAccessibility rdf:type owl:NamedIndividual ,
+                              :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#MathML
+:MathML rdf:type owl:NamedIndividual ,
+                 :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#NIMAS
+:NIMAS rdf:type owl:NamedIndividual ,
+                :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#Nemeth
+:Nemeth rdf:type owl:NamedIndividual ,
+                 :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#OEBPS
+:OEBPS rdf:type owl:NamedIndividual ,
+                :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#PDF
+:PDF rdf:type owl:NamedIndividual ,
+              :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#UIAutomation
+:UIAutomation rdf:type owl:NamedIndividual ,
+                       :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#accessModeRequired_visual
+:accessModeRequired_visual rdf:type owl:NamedIndividual ,
+                                    :accessModeRequired ;
+                           :accessMode_existingAccessMode :visual .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#adaptationReq_textOnImage
+:adaptationReq_textOnImage rdf:type owl:NamedIndividual .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#alternativeText
+:alternativeText rdf:type owl:NamedIndividual ,
+                          :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#audioDescription
+:audioDescription rdf:type owl:NamedIndividual ,
+                           :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#auditory
+:auditory rdf:type owl:NamedIndividual ,
+                   :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#backgroundColour
+:backgroundColour rdf:type owl:NamedIndividual ,
+                           :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#braille
+:braille rdf:type owl:NamedIndividual ,
+                  :adaptationMediaTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#captions
+:captions rdf:type owl:NamedIndividual ,
+                   :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#color
+:color rdf:type owl:NamedIndividual ,
+                :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#cursorPresentation
+:cursorPresentation rdf:type owl:NamedIndividual ,
+                             :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#e-book
+:e-book rdf:type owl:NamedIndividual ,
+                 :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#enhanced
+:enhanced rdf:type owl:NamedIndividual ,
+                   :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#enriched
+:enriched rdf:type owl:NamedIndividual ,
+                   :educationalComplexityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#flashing
+:flashing rdf:type owl:NamedIndividual ,
+                   :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#fontFace
+:fontFace rdf:type owl:NamedIndividual ,
+                   :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#fontSize
+:fontSize rdf:type owl:NamedIndividual ,
+                   :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#fontWeight
+:fontWeight rdf:type owl:NamedIndividual ,
+                     :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#foregroundColour
+:foregroundColour rdf:type owl:NamedIndividual ,
+                           :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#fullKeyboardControl
+:fullKeyboardControl rdf:type owl:NamedIndividual ,
+                              :controlFlexibilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#fullMouseControl
+:fullMouseControl rdf:type owl:NamedIndividual ,
+                           :controlFlexibilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#haptic
+:haptic rdf:type owl:NamedIndividual ,
+                 :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#highContrast
+:highContrast rdf:type owl:NamedIndividual ,
+                       :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#highlightPresentation
+:highlightPresentation rdf:type owl:NamedIndividual ,
+                                :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#iAccessible2
+:iAccessible2 rdf:type owl:NamedIndividual ,
+                       :accessibilityAPI .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#itemsize
+:itemsize rdf:type owl:NamedIndividual ,
+                   :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#layout
+:layout rdf:type owl:NamedIndividual ,
+                 :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#letterSpacing
+:letterSpacing rdf:type owl:NamedIndividual ,
+                        :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#lineHeight
+:lineHeight rdf:type owl:NamedIndividual ,
+                     :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#longDescription
+:longDescription rdf:type owl:NamedIndividual ,
+                          :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#motionSimulation
+:motionSimulation rdf:type owl:NamedIndividual ,
+                           :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#olfactory
+:olfactory rdf:type owl:NamedIndividual ,
+                    :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#olfactoryHazard
+:olfactoryHazard rdf:type owl:NamedIndividual ,
+                          :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#orientation
+:orientation rdf:type owl:NamedIndividual ,
+                      :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#position
+:position rdf:type owl:NamedIndividual ,
+                   :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#realTime
+:realTime rdf:type owl:NamedIndividual ,
+                   :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#recorded
+:recorded rdf:type owl:NamedIndividual ,
+                   :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#signLanguage
+:signLanguage rdf:type owl:NamedIndividual ,
+                       :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#simplified
+:simplified rdf:type owl:NamedIndividual ,
+                     :educationalComplexityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#sound
+:sound rdf:type owl:NamedIndividual ,
+                :hazardValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#structurePresentation
+:structurePresentation rdf:type owl:NamedIndividual ,
+                                :displayTransformabilityValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#symbolic
+:symbolic rdf:type owl:NamedIndividual ,
+                   :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#synthesized
+:synthesized rdf:type owl:NamedIndividual ,
+                      :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#tactile
+:tactile rdf:type owl:NamedIndividual ,
+                  :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#textOnImage
+:textOnImage rdf:type owl:NamedIndividual ,
+                      :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#textual
+:textual rdf:type owl:NamedIndividual ,
+                  :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#transcript
+:transcript rdf:type owl:NamedIndividual ,
+                     :adaptationTypeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#verbatim
+:verbatim rdf:type owl:NamedIndividual ,
+                   :adaptationDetailValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#visual
+:visual rdf:type owl:NamedIndividual ,
+                 :accessModeValue .
+
+
+###  http://www.AccessLearner.org/accessible_ocw#wordSpacing
+:wordSpacing rdf:type owl:NamedIndividual ,
+                      :displayTransformabilityValue .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
