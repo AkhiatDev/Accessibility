@@ -9,7 +9,7 @@
 
 <http://www.AccessLearner.org/accessible_ocw> a owl:Ontology ;
 	dc:creator "Mirette Elias" ;
-	dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html). ... (---to be refined----)" ;
+	dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html)." ;
 	dc:title "Access for Learner" ;
 	dc:contributor "Steffen Lohmann" ;
 	rdfs:label "AccessLearner Ontology"@en .
