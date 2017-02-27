@@ -1,4 +1,4 @@
-@prefix : <http://www.AccessLearner.org/accessible_ocw#> .
+@prefix : <http://purl.org/accessible_ocw#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,12 +7,12 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix GenericOntology: <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#> .
 
-<http://www.AccessLearner.org/accessible_ocw> a owl:Ontology ;
+<http://purl.org/accessible_ocw> a owl:Ontology ;
 	dc:creator "Mirette Elias" ;
 	dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html)." ;
 	dc:title "Access for Learner" ;
 	dc:contributor "Steffen Lohmann" ;
-	rdfs:label "AccessLearner Ontology"@en .
+	rdfs:label "Accessible_OCW Ontology"@en .
 # 
 # 
 # #################################################################
@@ -58,11 +58,11 @@ GenericOntology:hasMaritalStatus a owl:AnnotationProperty .
 
 GenericOntology:hasName a owl:AnnotationProperty .
 # 
-# http://www.AccessLearner.org/accessible_ocw#User_has_Disability
+# http://purl.org/accessible_ocw#User_has_Disability
 
 :User_has_Disability a owl:AnnotationProperty .
 # 
-# http://www.AccessLearner.org/accessible_ocw#hasMaritalStatus
+# http://purl.org/accessible_ocw#hasMaritalStatus
 
 :hasMaritalStatus a owl:AnnotationProperty .
 # 
@@ -75,168 +75,168 @@ GenericOntology:hasName a owl:AnnotationProperty .
 # #################################################################
 # 
 # 
-# http://www.AccessLearner.org/accessible_ocw#AccessMode
+# http://purl.org/accessible_ocw#AccessMode
 
 :AccessMode a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Device_linksTo_User
+# http://purl.org/accessible_ocw#Device_linksTo_User
 
 :Device_linksTo_User a owl:ObjectProperty ;
 	owl:inverseOf :User_linksTo_Device .
 # 
-# http://www.AccessLearner.org/accessible_ocw#User_linksTo_Device
+# http://purl.org/accessible_ocw#User_linksTo_Device
 
 :User_linksTo_Device a owl:ObjectProperty ;
 	rdfs:domain <http://www.AccessibleOntology.com/GenericOntology.owl#User> ;
 	rdfs:range GenericOntology:Device .
 # 
-# http://www.AccessLearner.org/accessible_ocw#accessModeAdapted
+# http://purl.org/accessible_ocw#accessModeAdapted
 
 :accessModeAdapted a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#accessModeOrnamental
+# http://purl.org/accessible_ocw#accessModeOrnamental
 
 :accessModeOrnamental a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#accessModeReq
+# http://purl.org/accessible_ocw#accessModeReq
 
 :accessModeReq a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :AccessModeRequired .
 # 
-# http://www.AccessLearner.org/accessible_ocw#accessMode_adaptionRequest
+# http://purl.org/accessible_ocw#accessMode_adaptionRequest
 
 :accessMode_adaptionRequest a owl:ObjectProperty ;
 	rdfs:domain :AccessModeRequired ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#accessMode_existingAccessMode
+# http://purl.org/accessible_ocw#accessMode_existingAccessMode
 
 :accessMode_existingAccessMode a owl:ObjectProperty ;
 	rdfs:domain :AccessModeRequired ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationDetail
+# http://purl.org/accessible_ocw#adaptationDetail
 
 :adaptationDetail a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationDetailReq
+# http://purl.org/accessible_ocw#adaptationDetailReq
 
 :adaptationDetailReq a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :AdaptationDetailRequired .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationDetail_adaptationRequest
+# http://purl.org/accessible_ocw#adaptationDetail_adaptationRequest
 
 :adaptationDetail_adaptationRequest a owl:ObjectProperty ;
 	rdfs:domain :AdaptationDetailRequired ;
 	rdfs:range :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationDetail_existingAccessMode
+# http://purl.org/accessible_ocw#adaptationDetail_existingAccessMode
 
 :adaptationDetail_existingAccessMode a owl:ObjectProperty ;
 	rdfs:domain :AdaptationDetailRequired ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationMediaReq
+# http://purl.org/accessible_ocw#adaptationMediaReq
 
 :adaptationMediaReq a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :AdaptationMediaRequired .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationMediaType
+# http://purl.org/accessible_ocw#adaptationMediaType
 
 :adaptationMediaType a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationMedia_adaptationRequest
+# http://purl.org/accessible_ocw#adaptationMedia_adaptationRequest
 
 :adaptationMedia_adaptationRequest a owl:ObjectProperty ;
 	rdfs:domain :AdaptationMediaRequired ;
 	rdfs:range :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationMedia_existingAccessMode
+# http://purl.org/accessible_ocw#adaptationMedia_existingAccessMode
 
 :adaptationMedia_existingAccessMode a owl:ObjectProperty ;
 	rdfs:domain :AdaptationMediaRequired ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationType
+# http://purl.org/accessible_ocw#adaptationType
 
 :adaptationType a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationTypeReq
+# http://purl.org/accessible_ocw#adaptationTypeReq
 
 :adaptationTypeReq a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :AdaptationTypeRequired .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationType_adaptationRequest
+# http://purl.org/accessible_ocw#adaptationType_adaptationRequest
 
 :adaptationType_adaptationRequest a owl:ObjectProperty ;
 	rdfs:domain :AdaptationTypeRequired ;
 	rdfs:range :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#adaptationType_existingAccessMode
+# http://purl.org/accessible_ocw#adaptationType_existingAccessMode
 
 :adaptationType_existingAccessMode a owl:ObjectProperty ;
 	rdfs:domain :AdaptationTypeRequired ;
 	rdfs:range :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#apiInteroperable
+# http://purl.org/accessible_ocw#apiInteroperable
 
 :apiInteroperable a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#controlFlexibility
+# http://purl.org/accessible_ocw#controlFlexibility
 
 :controlFlexibility a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :ControlFlexibilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#displayTransformability
+# http://purl.org/accessible_ocw#displayTransformability
 
 :displayTransformability a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#dr_educationalComplexityOfAdaptation
+# http://purl.org/accessible_ocw#dr_educationalComplexityOfAdaptation
 
 :dr_educationalComplexityOfAdaptation a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :EducationalComplexityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#educationalComplexityOfAdaptation
+# http://purl.org/accessible_ocw#educationalComplexityOfAdaptation
 
 :educationalComplexityOfAdaptation a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :EducationalComplexityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#hazard
+# http://purl.org/accessible_ocw#hazard
 
 :hazard a owl:ObjectProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#hazardAvoidance
+# http://purl.org/accessible_ocw#hazardAvoidance
 
 :hazardAvoidance a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#inputRequirements
+# http://purl.org/accessible_ocw#inputRequirements
 
 :inputRequirements a owl:ObjectProperty ;
 	rdfs:domain :Learner ;
@@ -251,77 +251,77 @@ GenericOntology:hasName a owl:AnnotationProperty .
 # #################################################################
 # 
 # 
-# http://www.AccessLearner.org/accessible_ocw#atInteroperable
+# http://purl.org/accessible_ocw#atInteroperable
 
 :atInteroperable a owl:DatatypeProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range xsd:boolean .
 # 
-# http://www.AccessLearner.org/accessible_ocw#dr_atInteroperable
+# http://purl.org/accessible_ocw#dr_atInteroperable
 
 :dr_atInteroperable a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:boolean .
 # 
-# http://www.AccessLearner.org/accessible_ocw#dr_educationalLevelOfAdaptation
+# http://purl.org/accessible_ocw#dr_educationalLevelOfAdaptation
 
 :dr_educationalLevelOfAdaptation a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:normalizedString .
 # 
-# http://www.AccessLearner.org/accessible_ocw#dr_languageOfAdaptation
+# http://purl.org/accessible_ocw#dr_languageOfAdaptation
 
 :dr_languageOfAdaptation a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:normalizedString .
 # 
-# http://www.AccessLearner.org/accessible_ocw#educationalLevelOfAdaptation
+# http://purl.org/accessible_ocw#educationalLevelOfAdaptation
 
 :educationalLevelOfAdaptation a owl:DatatypeProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range xsd:normalizedString .
 # 
-# http://www.AccessLearner.org/accessible_ocw#hasAdaptation
+# http://purl.org/accessible_ocw#hasAdaptation
 
 :hasAdaptation a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:anyURI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#isAdaptationOf
+# http://purl.org/accessible_ocw#isAdaptationOf
 
 :isAdaptationOf a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:anyURI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#isFullAdaptationOf
+# http://purl.org/accessible_ocw#isFullAdaptationOf
 
 :isFullAdaptationOf a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource ;
 	rdfs:range xsd:anyURI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#isPartialAdaptationOf
+# http://purl.org/accessible_ocw#isPartialAdaptationOf
 
 :isPartialAdaptationOf a owl:DatatypeProperty ;
 	rdfs:domain :DigitalResource .
 # 
-# http://www.AccessLearner.org/accessible_ocw#languageOfAdaptation
+# http://purl.org/accessible_ocw#languageOfAdaptation
 
 :languageOfAdaptation a owl:DatatypeProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range xsd:normalizedString .
 # 
-# http://www.AccessLearner.org/accessible_ocw#languageOfInterface
+# http://purl.org/accessible_ocw#languageOfInterface
 
 :languageOfInterface a owl:DatatypeProperty ;
 	rdfs:domain :Learner ;
 	rdfs:range xsd:normalizedString .
 # 
-# http://www.AccessLearner.org/accessible_ocw#numCells
+# http://purl.org/accessible_ocw#numCells
 
 :numCells a owl:DatatypeProperty ;
 	rdfs:domain <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille> .
 # 
-# http://www.AccessLearner.org/accessible_ocw#numDots
+# http://purl.org/accessible_ocw#numDots
 
 :numDots a owl:DatatypeProperty ;
 	rdfs:domain <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/Braille.owl#Braille> .
@@ -349,64 +349,64 @@ GenericOntology:hasName a owl:AnnotationProperty .
 
 GenericOntology:Device a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#DigitalResource
+# http://purl.org/accessible_ocw#DigitalResource
 
 :DigitalResource a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Learner
+# http://purl.org/accessible_ocw#Learner
 
 :Learner a owl:Class ;
 	rdfs:subClassOf <http://www.AccessibleOntology.com/GenericOntology.owl#User> .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AccessModeRequired
+# http://purl.org/accessible_ocw#AccessModeRequired
 
 :AccessModeRequired a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AccessModeValue
+# http://purl.org/accessible_ocw#AccessModeValue
 
 :AccessModeValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AccessibilityAPI
+# http://purl.org/accessible_ocw#AccessibilityAPI
 
 :AccessibilityAPI a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationDetailRequired
+# http://purl.org/accessible_ocw#AdaptationDetailRequired
 
 :AdaptationDetailRequired a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationDetailValue
+# http://purl.org/accessible_ocw#AdaptationDetailValue
 
 :AdaptationDetailValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationMediaRequired
+# http://purl.org/accessible_ocw#AdaptationMediaRequired
 
 :AdaptationMediaRequired a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationMediaTypeValue
+# http://purl.org/accessible_ocw#AdaptationMediaTypeValue
 
 :AdaptationMediaTypeValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationTypeRequired
+# http://purl.org/accessible_ocw#AdaptationTypeRequired
 
 :AdaptationTypeRequired a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AdaptationTypeValue
+# http://purl.org/accessible_ocw#AdaptationTypeValue
 
 :AdaptationTypeValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#ControlFlexibilityValue
+# http://purl.org/accessible_ocw#ControlFlexibilityValue
 
 :ControlFlexibilityValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#DisplayTransformabilityValue
+# http://purl.org/accessible_ocw#DisplayTransformabilityValue
 
 :DisplayTransformabilityValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#EducationalComplexityValue
+# http://purl.org/accessible_ocw#EducationalComplexityValue
 
 :EducationalComplexityValue a owl:Class .
 # 
-# http://www.AccessLearner.org/accessible_ocw#HazardValue
+# http://purl.org/accessible_ocw#HazardValue
 
 :HazardValue a owl:Class .
 # 
@@ -423,51 +423,51 @@ GenericOntology:Device a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.AccessLearner.org/accessible_ocw#ARIAv1
+# http://purl.org/accessible_ocw#ARIAv1
 
 :ARIAv1 a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AT-SPI
+# http://purl.org/accessible_ocw#AT-SPI
 
 :AT-SPI a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#ATK
+# http://purl.org/accessible_ocw#ATK
 
 :ATK a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#AndroidAccessibility
+# http://purl.org/accessible_ocw#AndroidAccessibility
 
 :AndroidAccessibility a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#BlackberryAccessibility
+# http://purl.org/accessible_ocw#BlackberryAccessibility
 
 :BlackberryAccessibility a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#ChemML
+# http://purl.org/accessible_ocw#ChemML
 
 :ChemML a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Daisy
+# http://purl.org/accessible_ocw#Daisy
 
 :Daisy a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#EPUB3
+# http://purl.org/accessible_ocw#EPUB3
 
 :EPUB3 a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#JavaAccessibility
+# http://purl.org/accessible_ocw#JavaAccessibility
 
 :JavaAccessibility a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#LIT
+# http://purl.org/accessible_ocw#LIT
 
 :LIT a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#LaTeX
+# http://purl.org/accessible_ocw#LaTeX
 
 :LaTeX a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Learner_1
+# http://purl.org/accessible_ocw#Learner_1
 
 :Learner_1 a owl:NamedIndividual , :Learner ;
 	:accessModeReq :visual_textual ;
@@ -485,7 +485,7 @@ GenericOntology:Device a owl:Class .
 	GenericOntology:hasMaritalStatus "Single"^^xsd:string ;
 	GenericOntology:hasName "Lena Fox"^^xsd:string .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Learner_2
+# http://purl.org/accessible_ocw#Learner_2
 
 :Learner_2 a owl:NamedIndividual , :Learner ;
 	:hazardAvoidance :flashing ;
@@ -501,7 +501,7 @@ GenericOntology:Device a owl:Class .
 	GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
 	GenericOntology:hasName "James Van"^^xsd:string .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Learner_3
+# http://purl.org/accessible_ocw#Learner_3
 
 :Learner_3 a owl:NamedIndividual , :Learner ;
 	:accessModeReq :auditory_textual ;
@@ -519,266 +519,266 @@ GenericOntology:Device a owl:Class .
 	GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
 	GenericOntology:hasName "Tomasa Almaraz"^^xsd:string .
 # 
-# http://www.AccessLearner.org/accessible_ocw#MSAA
+# http://purl.org/accessible_ocw#MSAA
 
 :MSAA a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#MacOSXAccessibility
+# http://purl.org/accessible_ocw#MacOSXAccessibility
 
 :MacOSXAccessibility a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#MathML
+# http://purl.org/accessible_ocw#MathML
 
 :MathML a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#NIMAS
+# http://purl.org/accessible_ocw#NIMAS
 
 :NIMAS a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#Nemeth
+# http://purl.org/accessible_ocw#Nemeth
 
 :Nemeth a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#OEBPS
+# http://purl.org/accessible_ocw#OEBPS
 
 :OEBPS a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#PDF
+# http://purl.org/accessible_ocw#PDF
 
 :PDF a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#UIAutomation
+# http://purl.org/accessible_ocw#UIAutomation
 
 :UIAutomation a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#alternativeText
+# http://purl.org/accessible_ocw#alternativeText
 
 :alternativeText a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#audioDescription
+# http://purl.org/accessible_ocw#audioDescription
 
 :audioDescription a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#auditory
+# http://purl.org/accessible_ocw#auditory
 
 :auditory a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#auditory_caption
+# http://purl.org/accessible_ocw#auditory_caption
 
 :auditory_caption a owl:NamedIndividual , :AdaptationTypeRequired ;
 	:adaptationType_adaptationRequest :captions ;
 	:adaptationType_existingAccessMode :auditory .
 # 
-# http://www.AccessLearner.org/accessible_ocw#auditory_textual
+# http://purl.org/accessible_ocw#auditory_textual
 
 :auditory_textual a owl:NamedIndividual , :AccessModeRequired ;
 	:accessMode_adaptionRequest :textual ;
 	:accessMode_existingAccessMode :auditory .
 # 
-# http://www.AccessLearner.org/accessible_ocw#auditory_verbatim
+# http://purl.org/accessible_ocw#auditory_verbatim
 
 :auditory_verbatim a owl:NamedIndividual , :AdaptationDetailRequired ;
 	:adaptationDetail_adaptationRequest :verbatim ;
 	:adaptationDetail_existingAccessMode :auditory .
 # 
-# http://www.AccessLearner.org/accessible_ocw#backgroundColour
+# http://purl.org/accessible_ocw#backgroundColour
 
 :backgroundColour a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#braille
+# http://purl.org/accessible_ocw#braille
 
 :braille a owl:NamedIndividual , :AdaptationMediaTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#captions
+# http://purl.org/accessible_ocw#captions
 
 :captions a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#color
+# http://purl.org/accessible_ocw#color
 
 :color a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#color_textual
+# http://purl.org/accessible_ocw#color_textual
 
 :color_textual a owl:NamedIndividual , :AccessModeRequired ;
 	:accessMode_adaptionRequest :textual ;
 	:accessMode_existingAccessMode :color .
 # 
-# http://www.AccessLearner.org/accessible_ocw#cursorPresentation
+# http://purl.org/accessible_ocw#cursorPresentation
 
 :cursorPresentation a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#e-book
+# http://purl.org/accessible_ocw#e-book
 
 :e-book a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#enhanced
+# http://purl.org/accessible_ocw#enhanced
 
 :enhanced a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#enriched
+# http://purl.org/accessible_ocw#enriched
 
 :enriched a owl:NamedIndividual , :EducationalComplexityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#flashing
+# http://purl.org/accessible_ocw#flashing
 
 :flashing a owl:NamedIndividual , :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#fontFace
+# http://purl.org/accessible_ocw#fontFace
 
 :fontFace a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#fontSize
+# http://purl.org/accessible_ocw#fontSize
 
 :fontSize a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#fontWeight
+# http://purl.org/accessible_ocw#fontWeight
 
 :fontWeight a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#foregroundColour
+# http://purl.org/accessible_ocw#foregroundColour
 
 :foregroundColour a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#fullKeyboardControl
+# http://purl.org/accessible_ocw#fullKeyboardControl
 
 :fullKeyboardControl a owl:NamedIndividual , :ControlFlexibilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#fullMouseControl
+# http://purl.org/accessible_ocw#fullMouseControl
 
 :fullMouseControl a owl:NamedIndividual , :ControlFlexibilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#haptic
+# http://purl.org/accessible_ocw#haptic
 
 :haptic a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#highContrast
+# http://purl.org/accessible_ocw#highContrast
 
 :highContrast a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#highlightPresentation
+# http://purl.org/accessible_ocw#highlightPresentation
 
 :highlightPresentation a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#iAccessible2
+# http://purl.org/accessible_ocw#iAccessible2
 
 :iAccessible2 a owl:NamedIndividual , :AccessibilityAPI .
 # 
-# http://www.AccessLearner.org/accessible_ocw#itemsize
+# http://purl.org/accessible_ocw#itemsize
 
 :itemsize a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#layout
+# http://purl.org/accessible_ocw#layout
 
 :layout a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#letterSpacing
+# http://purl.org/accessible_ocw#letterSpacing
 
 :letterSpacing a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#lineHeight
+# http://purl.org/accessible_ocw#lineHeight
 
 :lineHeight a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#longDescription
+# http://purl.org/accessible_ocw#longDescription
 
 :longDescription a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#motionSimulation
+# http://purl.org/accessible_ocw#motionSimulation
 
 :motionSimulation a owl:NamedIndividual , :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#olfactory
+# http://purl.org/accessible_ocw#olfactory
 
 :olfactory a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#olfactoryHazard
+# http://purl.org/accessible_ocw#olfactoryHazard
 
 :olfactoryHazard a owl:NamedIndividual , :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#orientation
+# http://purl.org/accessible_ocw#orientation
 
 :orientation a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#position
+# http://purl.org/accessible_ocw#position
 
 :position a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#realTime
+# http://purl.org/accessible_ocw#realTime
 
 :realTime a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#recorded
+# http://purl.org/accessible_ocw#recorded
 
 :recorded a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#signLanguage
+# http://purl.org/accessible_ocw#signLanguage
 
 :signLanguage a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#simplified
+# http://purl.org/accessible_ocw#simplified
 
 :simplified a owl:NamedIndividual , :EducationalComplexityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#sound
+# http://purl.org/accessible_ocw#sound
 
 :sound a owl:NamedIndividual , :HazardValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#structurePresentation
+# http://purl.org/accessible_ocw#structurePresentation
 
 :structurePresentation a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#symbolic
+# http://purl.org/accessible_ocw#symbolic
 
 :symbolic a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#synthesized
+# http://purl.org/accessible_ocw#synthesized
 
 :synthesized a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#tactile
+# http://purl.org/accessible_ocw#tactile
 
 :tactile a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#textOnImage
+# http://purl.org/accessible_ocw#textOnImage
 
 :textOnImage a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#textual
+# http://purl.org/accessible_ocw#textual
 
 :textual a owl:NamedIndividual , :AccessModeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#transcript
+# http://purl.org/accessible_ocw#transcript
 
 :transcript a owl:NamedIndividual , :AdaptationTypeValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#verbatim
+# http://purl.org/accessible_ocw#verbatim
 
 :verbatim a owl:NamedIndividual , :AdaptationDetailValue .
 # 
-# http://www.AccessLearner.org/accessible_ocw#visual
+# http://purl.org/accessible_ocw#visual
 
 :visual a owl:NamedIndividual , :AccessModeValue ;
 	:accessMode_adaptionRequest :textual .
 # 
-# http://www.AccessLearner.org/accessible_ocw#visual_alternativeText
+# http://purl.org/accessible_ocw#visual_alternativeText
 
 :visual_alternativeText a owl:NamedIndividual , :AdaptationTypeRequired ;
 	:adaptationType_adaptationRequest :alternativeText ;
 	:adaptationType_existingAccessMode :visual .
 # 
-# http://www.AccessLearner.org/accessible_ocw#visual_audioDiscription
+# http://purl.org/accessible_ocw#visual_audioDiscription
 
 :visual_audioDiscription a owl:NamedIndividual , :AdaptationTypeRequired ;
 	:adaptationType_adaptationRequest :audioDescription ;
 	:adaptationType_existingAccessMode :visual .
 # 
-# http://www.AccessLearner.org/accessible_ocw#visual_textual
+# http://purl.org/accessible_ocw#visual_textual
 
 :visual_textual a owl:NamedIndividual , :AccessModeRequired ;
 	:accessMode_adaptionRequest :textual ;
 	:accessMode_existingAccessMode :visual .
 # 
-# http://www.AccessLearner.org/accessible_ocw#wordSpacing
+# http://purl.org/accessible_ocw#wordSpacing
 
 :wordSpacing a owl:NamedIndividual , :DisplayTransformabilityValue .
 # 
