@@ -1,0 +1,1090 @@
+@prefix : <http://purl.org/accessible_ocw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix GenericOntology: <http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#> .
+@base <http://purl.org/accessible_ocw> .
+
+<http://purl.org/accessible_ocw> rdf:type owl:Ontology ;
+                                  dc:creator "Mirette Elias" ;
+                                  dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html)."@en ;
+                                  dc:title "Accessible OpenCourseWare"@en ;
+                                  dc:contributor "Steffen Lohmann" ;
+                                  rdfs:label "AccessibleOCW Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#Meet
+GenericOntology:Meet rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#TechnologyUsage
+GenericOntology:TechnologyUsage rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#User_has_Disability
+GenericOntology:User_has_Disability rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasAge
+GenericOntology:hasAge rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasEducation
+GenericOntology:hasEducation rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasJob
+GenericOntology:hasJob rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasLocation
+GenericOntology:hasLocation rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasMaritalStatus
+GenericOntology:hasMaritalStatus rdf:type owl:AnnotationProperty .
+
+
+###  http://160.40.50.89/Accessible_Ontology/Version5.1/OWLs/GenericOntology.owl#hasName
+GenericOntology:hasName rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/accessible_ocw#User_has_Disability
+:User_has_Disability rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/accessible_ocw#hasMaritalStatus
+:hasMaritalStatus rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/accessible_ocw#accessMode_adaptionRequest
+:accessMode_adaptionRequest rdf:type owl:ObjectProperty ;
+                            rdfs:domain :RequiredAccessMode ;
+                            rdfs:range :AccessModeType ;
+                            rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAccessMode class; given the existing AccessModeType"@en ;
+           rdfs:label "has Adaptation Request"@en .
+
+
+
+###  http://purl.org/accessible_ocw#accessMode_existingAccessMode
+:accessMode_existingAccessMode rdf:type owl:ObjectProperty ;
+                               rdfs:domain :RequiredAccessMode ;
+                               rdfs:range :AccessModeType ;
+                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource."@en ;
+           rdfs:label "has Existing AccessMode"@en .
+
+
+###  http://purl.org/accessible_ocw#adaptationDetail_adaptationRequest
+:adaptationDetail_adaptationRequest rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :RequiredAdaptationDetail ;
+                                    rdfs:range :AdaptationDetailType ;
+                                    rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationDetail class; given the existing AccessModeType"@en ;
+           rdfs:label "has Adaptation Request"@en .
+
+
+
+###  http://purl.org/accessible_ocw#adaptationDetail_existingAccessMode
+:adaptationDetail_existingAccessMode rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :RequiredAdaptationDetail ;
+                                     rdfs:range :AccessModeType ;
+                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
+           rdfs:label "has Existing AccessMode"@en .
+
+
+###  http://purl.org/accessible_ocw#adaptationMedia_adaptationRequest
+:adaptationMedia_adaptationRequest rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :RequiredAdaptationMedia ;
+                                   rdfs:range :AdaptationMediaType ;
+                                   rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationMedia class; given the existing AccessModeType"@en ;
+           rdfs:label "has Adaptation Request"@en .
+
+
+###  http://purl.org/accessible_ocw#adaptationMedia_existingAccessMode
+:adaptationMedia_existingAccessMode rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :RequiredAdaptationMedia ;
+                                    rdfs:range :AccessModeType ;
+                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
+           rdfs:label "has Existing AccessMode"@en .
+
+
+###  http://purl.org/accessible_ocw#adaptationType_adaptationRequest
+:adaptationType_adaptationRequest rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :RequiredAdaptationType ;
+                                  rdfs:range :AdaptationType ;
+                                  rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationType class; given the existing AccessModeType"@en ;
+           rdfs:label "has Adaptation Request"@en .
+
+
+###  http://purl.org/accessible_ocw#adaptationType_existingAccessMode
+:adaptationType_existingAccessMode rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :RequiredAdaptationType ;
+                                   rdfs:range :AccessModeType ;
+                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
+           rdfs:label "has Existing AccessMode"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAccess
+:hasAccess rdf:type owl:ObjectProperty ;
+           rdfs:domain :Learner ;
+           rdfs:range :DigitalResource ;
+           rdfs:comment "A learner can access a Digital Resource if all his requirements are satisfied"@en ;
+           rdfs:label "has Access"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAccessMode
+:hasAccessMode rdf:type owl:ObjectProperty ;
+               rdfs:domain :DigitalResource ;
+               rdfs:range :AccessModeType ;
+               rdfs:comment "An access mode through which the intellectual content of a described resource or adaptation is communicated; if adaptations for the resource are known, the access modes of those adaptations are not included." ;
+               rdfs:label "has Access Mode"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAccessModeOrnamental
+:hasAccessModeOrnamental rdf:type owl:ObjectProperty ;
+                         rdfs:domain :DigitalResource ;
+                         rdfs:range :AccessModeType ;
+                         rdfs:comment "An access mode through which ornamental content of the described resource or adaptation is communicated; if adaptations for the resource are known the access modes of those adaptations are not included." ;
+                         rdfs:label "has Access Mode Ornament"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAdaptationDetail
+:hasAdaptationDetail rdf:type owl:ObjectProperty ;
+                     rdfs:domain :DigitalResource ;
+                     rdfs:range :AdaptationDetailType ;
+                     rdfs:comment "Fine detail of one or more adaptation type values." ;
+                     rdfs:label "has Adaptation Detail"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAdaptationMediaType
+:hasAdaptationMediaType rdf:type owl:ObjectProperty ;
+                        rdfs:domain :DigitalResource ;
+                        rdfs:range :AdaptationMediaType ;
+                        rdfs:comment "Identifies the media type of the described resource, for media types commonly used to aggregate modalities or functionalities." ;
+                        rdfs:label "has Adaptation Media Type"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAdaptationType
+:hasAdaptationType rdf:type owl:ObjectProperty ;
+                   rdfs:domain :DigitalResource ;
+                   rdfs:range :AdaptationType ;
+                   rdfs:comment "Nature or genre of the adaptation." ;
+                   rdfs:label "has Adaptation Type"@en .
+
+
+###  http://purl.org/accessible_ocw#hasAdaptedAccessMode
+:hasAdaptedAccessMode rdf:type owl:ObjectProperty ;
+                      rdfs:domain :DigitalResource ;
+                      rdfs:range :AccessModeType ;
+                      rdfs:comment "The access mode of the intellectual content of the resource that is being adapted." ;
+                      rdfs:label "has Adapted Access Mode"@en .
+
+
+###  http://purl.org/accessible_ocw#hasControlFlexibility
+:hasControlFlexibility rdf:type owl:ObjectProperty ;
+                       rdfs:domain :DigitalResource ;
+                       rdfs:range :ControlFlexibilityType ;
+                       rdfs:comment "dentifies a single input method that is sufficient to control the described resource."@en ;
+                       rdfs:label "has Control Flexibility"@en .
+
+
+###  http://purl.org/accessible_ocw#hasDisplayTransformability
+:hasDisplayTransformability rdf:type owl:ObjectProperty ;
+                            rdfs:domain :DigitalResource ;
+                            rdfs:range :DisplayTransformabilityType ;
+                            rdfs:comment "Identifies a characteristic of display of the described resource that can be programmatically modified." ;
+                            rdfs:label "has Display Transformability"@en .
+
+
+###  http://purl.org/accessible_ocw#hasEducationalComplexityOfAdaptation
+:hasEducationalComplexityOfAdaptation rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :Learner ;
+                                      rdfs:range :EducationalComplexityType ;
+                                      rdfs:comment "A preference for the education level of the adaptation." ;
+                                      rdfs:label "has Educational Complexity of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasEducationalComplexityOfAdaptation_dr
+:hasEducationalComplexityOfAdaptation_dr rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :DigitalResource ;
+                                         rdfs:range :EducationalComplexityType ;
+                                         rdfs:comment "Identifies if the resource is simplified or enriched relative to another resource that presents the same intellectual content." ;
+                                         rdfs:label "DR has Educational Complexity of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasHazard
+:hasHazard rdf:type owl:ObjectProperty ;
+           rdfs:domain :DigitalResource ;
+           rdfs:range :HazardType ;
+           rdfs:comment "A characteristic of the described resource that must not be delivered to some users."@en ;
+           rdfs:label "has Hazard"@en .
+
+
+###  http://purl.org/accessible_ocw#hasHazardAvoidance
+:hasHazardAvoidance rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Learner ;
+                    rdfs:range :HazardType ;
+                    rdfs:comment "A resource having such a characteristic should not be delivered to a user with this preference." ;
+                    rdfs:label "has Hazard Avoidance"@en .
+
+
+###  http://purl.org/accessible_ocw#hasInputRequirements
+:hasInputRequirements rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Learner ;
+                      rdfs:range :ControlFlexibilityType ;
+                      rdfs:comment "Single input system that is sufficient to control a resource." ;
+                      rdfs:label "has Input Requirements"@en .
+
+
+###  http://purl.org/accessible_ocw#hasReqAdaptationDetail
+:hasReqAdaptationDetail rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Learner ;
+                        rdfs:range :RequiredAdaptationDetail ;
+                        rdfs:comment "Fine detail of one or more required adaptation types." ;
+                        rdfs:label "has Required Adaptation Details"@en .
+
+
+###  http://purl.org/accessible_ocw#hasReqAdaptationMedia
+:hasReqAdaptationMedia rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Learner ;
+                       rdfs:range :RequiredAdaptationMedia ;
+                       rdfs:comment "Requirement for a particular type of media." ;
+                       rdfs:label "has Required Adaptation Media"@en .
+
+
+###  http://purl.org/accessible_ocw#hasReqAdaptationType
+:hasReqAdaptationType rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Learner ;
+                      rdfs:range :RequiredAdaptationType ;
+                      rdfs:label "has Required Adaptation Type"@en .
+
+
+###  http://purl.org/accessible_ocw#hasReqAccessMode
+:hasReqAccessMode rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Learner ;
+                       rdfs:range :RequiredAccessMode ;
+                       rdfs:label "has Required Access Mode"@en .
+
+
+###  http://purl.org/accessible_ocw#isApiInteroperable
+:isApiInteroperable rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range :AccessibilityApiType ;
+                    rdfs:comment "Indicates that the resource is compatible with the referenced accessibility API."@en ;
+                    rdfs:label "is API Interoperable"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/accessible_ocw#hasAdaptation
+:hasAdaptation rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DigitalResource ;
+               rdfs:range xsd:anyURI ;
+               rdfs:comment "Identifier of a resource that is an adaptation for this resource."@en ;
+               rdfs:label "has Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasEducationalLevelOfAdaptation
+:hasEducationalLevelOfAdaptation rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :Learner ;
+                                 rdfs:range xsd:normalizedString ;
+                                 rdfs:comment "A preference for the education level of the adaptation. It should follow some educational standard vocabulary, examples at http://elastic1.asn.desire2learn.com/asn/scheme"@en ;
+                                 rdfs:label "has Educational Level of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasEducationalLevelOfAdaptation_dr
+:hasEducationalLevelOfAdaptation_dr rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :DigitalResource ;
+                                    rdfs:range xsd:normalizedString ;
+                                    rdfs:comment "The level of education for which the described resource is intended.  It should follow some educational standard vocabulary, examples at http://elastic1.asn.desire2learn.com/asn/scheme"@en ;
+                                    rdfs:label "DR Educational Level of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasLanguageOfAdaptation
+:hasLanguageOfAdaptation rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Learner ;
+                         rdfs:range xsd:normalizedString ;
+                         rdfs:comment """A preference for the language of the adaptation [RFC4646].
+This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/RFC4646"""@en ;
+                         rdfs:label "has Language of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasLanguageOfAdaptation_dr
+:hasLanguageOfAdaptation_dr rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :DigitalResource ;
+                            rdfs:range xsd:normalizedString ;
+                            rdfs:comment "A language of the intellectual content of the resource"@en ;
+                            rdfs:label "DR has Language of Adaptation"@en .
+
+
+###  http://purl.org/accessible_ocw#hasLanguageOfInterface
+:hasLanguageOfInterface rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Learner ;
+                        rdfs:range xsd:normalizedString ;
+                        rdfs:comment """A preference for the language of the user interface [RFC4646].
+This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/RFC4646"""@en ;
+                        rdfs:label "has Language of Interface"@en .
+
+
+###  http://purl.org/accessible_ocw#isAdaptationOf
+:isAdaptationOf rdf:type owl:DatatypeProperty ;
+                rdfs:domain :DigitalResource ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "Identifier of a resource for which this is an adaptation."@en ;
+                rdfs:label "is Adaptation of"@en .
+
+
+###  http://purl.org/accessible_ocw#isAtInteroperable
+:isAtInteroperable rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Learner ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "A preference for resources that are compatible with assistive technologies." ;
+                   rdfs:label "Interoperability to Assistive Technology"@en .
+
+
+###  http://purl.org/accessible_ocw#isAtInteroperable_dr
+:isAtInteroperable_dr rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :DigitalResource ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:comment "The resource is compatible with assistive technologies. Setting this resource metadata indicates compliance with WCAG 2.0 checkpoints: 1.1.1, 1.3.1, 1.3.2, 2.4.4, 3.1.1, 3.1.2, 3.3.2, 4.1.1, 4.1.2." ;
+                      rdfs:label "DR Interoperability to Assistive Technology"@en .
+
+
+###  http://purl.org/accessible_ocw#isFullAdaptationOf
+:isFullAdaptationOf rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:comment "A resource for which the described resource provides a full adaptation."@en ;
+                    rdfs:label "is Full Adaptation of"@en .
+
+
+###  http://purl.org/accessible_ocw#isPartialAdaptationOf
+:isPartialAdaptationOf rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :DigitalResource ;
+                       rdfs:range xsd:anyURI ;
+                       rdfs:comment "A resource for which the described resource provides a partial adaptation."@en ;
+                       rdfs:label "is Partial Adaptation of"@en .
+
+
+###  http://purl.org/accessible_ocw#standardName
+:standardName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AccessibilityApiType ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The name of the accessibility standard"@en ;
+              rdfs:label "Standard Name"@en .
+
+
+###  http://purl.org/accessible_ocw#standardReference
+:standardReference rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :AccessibilityApiType ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "The URL reference of an accessibility standard"@en ;
+                   rdfs:label "Standard Reference URL"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/accessible_ocw#AccessModeType
+:AccessModeType rdf:type owl:Class ;
+                rdfs:comment "Human sensory perceptual system or cognitive faculty through which a person may process or perceive information." ;
+                rdfs:label "Access Mode Type"@en .
+
+
+###  http://purl.org/accessible_ocw#AccessibilityApiType
+:AccessibilityApiType rdf:type owl:Class ;
+                      rdfs:comment "Indicates that the resource is compatible with the referenced accessibility API" ;
+                      rdfs:label "Accessibility API Type"@en .
+
+
+###  http://purl.org/accessible_ocw#AdaptationDetailType
+:AdaptationDetailType rdf:type owl:Class ;
+                      rdfs:comment "Term that gives fine detail of one or more adaptation type values."@en ;
+                      rdfs:label "Adaptation Detail Type"@en .
+
+
+###  http://purl.org/accessible_ocw#AdaptationMediaType
+:AdaptationMediaType rdf:type owl:Class ;
+                     rdfs:comment "Term identifying a media type commonly used to aggregate accessibility modalities or functionalities as media."@en ;
+                     rdfs:label "Adaptation Media Type"@en .
+
+
+###  http://purl.org/accessible_ocw#AdaptationType
+:AdaptationType rdf:type owl:Class ;
+                rdfs:comment "Term describing an adaptation type."@en ;
+                rdfs:label "Adaptation Type"@en .
+
+
+###  http://purl.org/accessible_ocw#ControlFlexibilityType
+:ControlFlexibilityType rdf:type owl:Class ;
+                        rdfs:comment "Term describing an input method"@en ;
+                        rdfs:label "Control Flexibility Type"@en .
+
+
+###  http://purl.org/accessible_ocw#DigitalResource
+:DigitalResource rdf:type owl:Class ;
+                 rdfs:comment "Digital Resource represents any type of educational resources"@en ;
+                 rdfs:label "Digital Resource"@en .
+
+
+###  http://purl.org/accessible_ocw#DisplayTransformabilityType
+:DisplayTransformabilityType rdf:type owl:Class ;
+                             rdfs:comment "Identifies a characteristic of display of the described resource that can be programmatically modified."@en ;
+                             rdfs:label "Display Transformability Type"@en .
+
+
+###  http://purl.org/accessible_ocw#EducationalComplexityType
+:EducationalComplexityType rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Class ;
+                                                 owl:oneOf ( :enriched
+                                                             :simplified
+                                                           )
+                                               ] ;
+                           rdfs:comment "A preference for a resource that is simplified or enriched relative to another resource that presents the same intellectual content."@en ;
+                           rdfs:label "Educational Complexity Type"@en .
+
+
+###  http://purl.org/accessible_ocw#HazardType
+:HazardType rdf:type owl:Class ;
+            rdfs:comment "Term describing a characteristic of the described resource that must not be delivered to some users."@en ;
+            rdfs:label "Hazard Type"@en .
+
+
+###  http://purl.org/accessible_ocw#Learner
+:Learner rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.AccessibleOntology.com/GenericOntology.owl#User> ;
+         rdfs:comment "Learner is a subclass of the User class"@en ;
+         rdfs:label "Learner"@en .
+
+
+###  http://purl.org/accessible_ocw#RequiredAccessMode
+:RequiredAccessMode rdf:type owl:Class ;
+                    rdfs:comment "Access mode that a user seeks either in an adaptation or an original resource as a replacement for a different access mode." ;
+                    rdfs:label "Required Access Mode"@en .
+
+
+###  http://purl.org/accessible_ocw#RequiredAdaptationDetail
+:RequiredAdaptationDetail rdf:type owl:Class ;
+                          rdfs:comment "Fine detail of one or more required adaptation types."@en ;
+                          rdfs:label "Required Adaptation Detail"@en .
+
+
+###  http://purl.org/accessible_ocw#RequiredAdaptationMedia
+:RequiredAdaptationMedia rdf:type owl:Class ;
+                         rdfs:comment "Term identifying a media type commonly used to aggregate accessibility modalities or functionalities as media"@en ;
+                         rdfs:label "Required Adaptation Media"@en .
+
+
+###  http://purl.org/accessible_ocw#RequiredAdaptationType
+:RequiredAdaptationType rdf:type owl:Class ;
+                        rdfs:comment "Nature or genre of the adaptation required as a replacement for a specific access mode" ;
+                        rdfs:label "Required Adaptation Type"@en .
+
+
+###  http://www.AccessibleOntology.com/GenericOntology.owl#User
+<http://www.AccessibleOntology.com/GenericOntology.owl#User> rdf:type owl:Class ;
+                                                             rdfs:comment "User class is extended from ACCESSIBLE ontology"@en ;
+                                                             rdfs:label "User"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/accessible_ocw#ARIAv1
+:ARIAv1 rdf:type owl:NamedIndividual ,
+                 :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#AT-SPI
+:AT-SPI rdf:type owl:NamedIndividual ,
+                 :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#ATK
+:ATK rdf:type owl:NamedIndividual ,
+              :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#AndroidAccessibility
+:AndroidAccessibility rdf:type owl:NamedIndividual ,
+                               :AccessibilityApiType ;
+                      rdfs:comment "Term identifying an adaptive technology API for reference in resource metadata."@en ;
+                      rdfs:label "Android Accessibility"@en .
+
+
+###  http://purl.org/accessible_ocw#BlackberryAccessibility
+:BlackberryAccessibility rdf:type owl:NamedIndividual ,
+                                  :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#ChemML
+:ChemML rdf:type owl:NamedIndividual ,
+                 :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#Daisy
+:Daisy rdf:type owl:NamedIndividual ,
+                :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#EPUB3
+:EPUB3 rdf:type owl:NamedIndividual ,
+                :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#JavaAccessibility
+:JavaAccessibility rdf:type owl:NamedIndividual ,
+                            :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#LIT
+:LIT rdf:type owl:NamedIndividual ,
+              :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#LaTeX
+:LaTeX rdf:type owl:NamedIndividual ,
+                :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#Learner_1
+:Learner_1 rdf:type owl:NamedIndividual ,
+                    :Learner ;
+           :hasReqAdaptationType :visual_alternativeText ,
+                                 :visual_audioDiscription ;
+           :hasReqAccessMode :visual_textual ;
+           :hasLanguageOfAdaptation "Spanish"^^xsd:string ;
+           :hasLanguageOfInterface "Spanish"^^xsd:string ;
+           :isAtInteroperable "true"^^xsd:boolean ;
+           GenericOntology:Meet "Lena was born blind. She completed her high</br>school but she couldn't find a job." ;
+           GenericOntology:TechnologyUsage "Lena uses her PC (Windows XP) on a daily basis to check her email and apply for jobs. She uses the Jaws screenreader and she also</br>uses OCR software, a Braille embosser and Adobe reader speech output. "^^xsd:string ;
+           GenericOntology:User_has_Disability :Blindness ;
+           GenericOntology:hasAge "20"^^xsd:int ;
+           GenericOntology:hasEducation "High school"^^xsd:string ;
+           GenericOntology:hasJob "Unemployed"^^xsd:string ;
+           GenericOntology:hasLocation "Spain"^^xsd:string ;
+           GenericOntology:hasMaritalStatus "Single"^^xsd:string ;
+           GenericOntology:hasName "Lena Fox"^^xsd:string .
+
+
+###  http://purl.org/accessible_ocw#Learner_2
+:Learner_2 rdf:type owl:NamedIndividual ,
+                    :Learner ;
+           :hasHazardAvoidance :flashing ;
+           :hasLanguageOfAdaptation "English"^^xsd:string ;
+           :hasLanguageOfInterface "English"^^xsd:string ;
+           GenericOntology:Meet "James have problems with some colors. He is working as an engineer."^^xsd:string ;
+           GenericOntology:TechnologyUsage "He works on his desktop PC every day, most of the day and is responsible of the network admistration in his company."^^xsd:string ;
+           GenericOntology:User_has_Disability :Colour_Blindness ;
+           GenericOntology:hasAge "25"^^xsd:int ;
+           GenericOntology:hasEducation "Bachelor&rsquo;s degree in Network and Communication"^^xsd:string ;
+           GenericOntology:hasJob "Employed"^^xsd:string ;
+           GenericOntology:hasLocation "Belgium"^^xsd:string ;
+           GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
+           GenericOntology:hasName "James Van"^^xsd:string .
+
+
+###  http://purl.org/accessible_ocw#Learner_3
+:Learner_3 rdf:type owl:NamedIndividual ,
+                    :Learner ;
+           :hasReqAdaptationDetail :auditory_verbatim ;
+           :hasReqAdaptationType :auditory_caption ;
+           :hasReqAccessMode :auditory_textual ;
+           :hasLanguageOfAdaptation "Spanish"^^xsd:string ;
+           :hasLanguageOfInterface "Spanish"^^xsd:string ;
+           GenericOntology:Meet "Tomasa is completely deaf. She holds a</br>master&rsquo;s degree in Law, and she works in a consulting firm in Belgium. </br>Since her teenage years, Tomasa is completely deaf. At first, it was very</br>difficult to communicate with other people, but she has learned to cope</br>with her deafness: she mostly uses lip reading to communicate with</br>other people. Sometimes, she also uses some sign language when she is</br>in a company where people also understand it. But as many people don&rsquo;t</br>understand sign language, she doesn&rsquo;t use it very often."^^xsd:string ;
+           GenericOntology:TechnologyUsage "Tomasa is quite a heavy technology user. For work, she has a standard Windows</br>Vista laptop, which she also uses at home and sometimes even in</br>train stations and airports when she is waiting. She spends about 50 hours</br>per week using her computer, it is an important tool for her. At work, </br>Tomasa creates and edits word and excel documents, and searches for</br>information on the internet. She is also a heavy e-mail user, as she has to</br>keep a close contact with her clients without being able to make</br>phonecalls. At home, she manages the pictures of her children growing</br>up and occasionally plays a casual computer game like Tetris. She</br>has already considered switching to Firefox, but still uses Internet</br>Explorer to surf the internet on a daily basis. Tomasa uses Google, </br>Gmail, updates her blog, uses instant messaging to talk to her friends, takes</br>quizzes on Facebook, sometimes watching a video on Youtube, etc. </br>The mobile phone is also very important for Tomasa: she couldn&rsquo;t miss it as</br>a tool. But it is also part of her life style, and she carries is around all the</br>time. She uses it to videocall her husband if she will be home late, and to</br>keep up with her friends. Most important about her phone is the look and</br>feel. It has a big screen displaying clear letters, and it feeds pretty good</br>images when she uses the phone in video calls. Although her</br>smartphone was quite expensive, the device, with all its functionalities, </br>was worth the investment. She mostly uses the phone as any other user</br>would, but as she can&rsquo;t make any regular calls, the video call</br>functionality is very important to her. Besides video call, she uses</br>texting, e-mail (she likes the Qwerty keypad!), and sometimes internet. </br>As the phone has so many features, she thinks it is a pity she can&rsquo;t use all of</br>them, such as the built-in radio receiver, MP3 player, etc. Tomasa uses no</br>assistive technology with her phone."^^xsd:string ;
+           GenericOntology:User_has_Disability :Communication_Disability ,
+                                               :Deafness ;
+           GenericOntology:hasAge "34"^^xsd:int ;
+           GenericOntology:hasEducation "Master's degree in law"^^xsd:string ;
+           GenericOntology:hasJob "Employed"^^xsd:string ;
+           GenericOntology:hasLocation "Barcelona, Spain"^^xsd:string ;
+           GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
+           GenericOntology:hasName "Tomasa Almaraz"^^xsd:string .
+
+
+###  http://purl.org/accessible_ocw#MSAA
+:MSAA rdf:type owl:NamedIndividual ,
+               :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#MacOSXAccessibility
+:MacOSXAccessibility rdf:type owl:NamedIndividual ,
+                              :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#MathML
+:MathML rdf:type owl:NamedIndividual ,
+                 :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#NIMAS
+:NIMAS rdf:type owl:NamedIndividual ,
+                :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#Nemeth
+:Nemeth rdf:type owl:NamedIndividual ,
+                 :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#OEBPS
+:OEBPS rdf:type owl:NamedIndividual ,
+                :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#PDF
+:PDF rdf:type owl:NamedIndividual ,
+              :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#UIAutomation
+:UIAutomation rdf:type owl:NamedIndividual ,
+                       :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#alternativeText
+:alternativeText rdf:type owl:NamedIndividual ,
+                          :AdaptationType ;
+                 rdfs:comment "Text that is programmatically associated with non-text content and that serves the equivalent purpose (WCAG2)."@en ;
+                 rdfs:label "Alternative Text"@en .
+
+
+###  http://purl.org/accessible_ocw#audioDescription
+:audioDescription rdf:type owl:NamedIndividual ,
+                           :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#auditory
+:auditory rdf:type owl:NamedIndividual ,
+                   :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#auditory_caption
+:auditory_caption rdf:type owl:NamedIndividual ,
+                           :RequiredAdaptationType ;
+                  :adaptationType_adaptationRequest :captions ;
+                  :adaptationType_existingAccessMode :auditory .
+
+
+###  http://purl.org/accessible_ocw#auditory_textual
+:auditory_textual rdf:type owl:NamedIndividual ,
+                           :RequiredAccessMode ;
+                  :accessMode_adaptionRequest :textual ;
+                  :accessMode_existingAccessMode :auditory .
+
+
+###  http://purl.org/accessible_ocw#auditory_verbatim
+:auditory_verbatim rdf:type owl:NamedIndividual ,
+                            :RequiredAdaptationDetail ;
+                   :adaptationDetail_adaptationRequest :verbatim ;
+                   :adaptationDetail_existingAccessMode :auditory .
+
+
+###  http://purl.org/accessible_ocw#backgroundColour
+:backgroundColour rdf:type owl:NamedIndividual ,
+                           :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#braille
+:braille rdf:type owl:NamedIndividual ,
+                  :AdaptationMediaType .
+
+
+###  http://purl.org/accessible_ocw#captions
+:captions rdf:type owl:NamedIndividual ,
+                   :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#color
+:color rdf:type owl:NamedIndividual ,
+                :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#color_textual
+:color_textual rdf:type owl:NamedIndividual ,
+                        :RequiredAccessMode ;
+               :accessMode_adaptionRequest :textual ;
+               :accessMode_existingAccessMode :color .
+
+
+###  http://purl.org/accessible_ocw#cursorPresentation
+:cursorPresentation rdf:type owl:NamedIndividual ,
+                             :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#digitalResource1
+:digitalResource1 rdf:type owl:NamedIndividual ,
+                           :DigitalResource ;
+                  :hasAccessMode :visual ;
+                  :hasControlFlexibility :fullKeyboardControl ;
+                  :hasDisplayTransformability :backgroundColour ;
+                  :hasEducationalComplexityOfAdaptation_dr :enriched ;
+                  :hasHazard :flashing ;
+                  :hasAdaptation "digitalResource2_URI"^^xsd:anyURI ,
+                                 "digitalResource3_URI"^^xsd:anyURI ;
+                  :isAtInteroperable_dr "true"^^xsd:boolean .
+
+
+###  http://purl.org/accessible_ocw#digitalResource2
+:digitalResource2 rdf:type owl:NamedIndividual ,
+                           :DigitalResource ;
+                  :hasAccessMode :textual ;
+                  :hasAdaptationMediaType :braille ;
+                  :hasAdaptedAccessMode :tactile ;
+                  :hasControlFlexibility :fullKeyboardControl ;
+                  :hasEducationalComplexityOfAdaptation_dr :enriched ;
+                  :isAdaptationOf "digitalResource1_URL"^^xsd:anyURI ;
+                  :isAtInteroperable_dr "true"^^xsd:boolean .
+
+
+###  http://purl.org/accessible_ocw#digitalResource3
+:digitalResource3 rdf:type owl:NamedIndividual ,
+                           :DigitalResource ;
+                  :hasAccessMode :auditory ;
+                  :hasControlFlexibility :fullKeyboardControl ;
+                  :hasEducationalComplexityOfAdaptation_dr :enriched ;
+                  :isAdaptationOf "digitalResource1_URI"^^xsd:anyURI ;
+                  :isAtInteroperable_dr "true"^^xsd:boolean .
+
+
+###  http://purl.org/accessible_ocw#e-book
+:e-book rdf:type owl:NamedIndividual ,
+                 :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#enhanced
+:enhanced rdf:type owl:NamedIndividual ,
+                   :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#enriched
+:enriched rdf:type owl:NamedIndividual ,
+                   :EducationalComplexityType ;
+          rdfs:comment "ُEnriched instance indicates the capability of accessing a normal/complex resource"@en ;
+          rdfs:label "Enriched"@en .
+
+
+###  http://purl.org/accessible_ocw#flashing
+:flashing rdf:type owl:NamedIndividual ,
+                   :HazardType .
+
+
+###  http://purl.org/accessible_ocw#fontFace
+:fontFace rdf:type owl:NamedIndividual ,
+                   :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#fontSize
+:fontSize rdf:type owl:NamedIndividual ,
+                   :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#fontWeight
+:fontWeight rdf:type owl:NamedIndividual ,
+                     :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#foregroundColour
+:foregroundColour rdf:type owl:NamedIndividual ,
+                           :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#fullKeyboardControl
+:fullKeyboardControl rdf:type owl:NamedIndividual ,
+                              :ControlFlexibilityType .
+
+
+###  http://purl.org/accessible_ocw#fullMouseControl
+:fullMouseControl rdf:type owl:NamedIndividual ,
+                           :ControlFlexibilityType .
+
+
+###  http://purl.org/accessible_ocw#haptic
+:haptic rdf:type owl:NamedIndividual ,
+                 :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#highContrast
+:highContrast rdf:type owl:NamedIndividual ,
+                       :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#highlightPresentation
+:highlightPresentation rdf:type owl:NamedIndividual ,
+                                :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#iAccessible2
+:iAccessible2 rdf:type owl:NamedIndividual ,
+                       :AccessibilityApiType .
+
+
+###  http://purl.org/accessible_ocw#itemsize
+:itemsize rdf:type owl:NamedIndividual ,
+                   :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#layout
+:layout rdf:type owl:NamedIndividual ,
+                 :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#letterSpacing
+:letterSpacing rdf:type owl:NamedIndividual ,
+                        :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#lineHeight
+:lineHeight rdf:type owl:NamedIndividual ,
+                     :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#longDescription
+:longDescription rdf:type owl:NamedIndividual ,
+                          :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#motionSimulation
+:motionSimulation rdf:type owl:NamedIndividual ,
+                           :HazardType .
+
+
+###  http://purl.org/accessible_ocw#olfactory
+:olfactory rdf:type owl:NamedIndividual ,
+                    :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#olfactoryHazard
+:olfactoryHazard rdf:type owl:NamedIndividual ,
+                          :HazardType .
+
+
+###  http://purl.org/accessible_ocw#orientation
+:orientation rdf:type owl:NamedIndividual ,
+                      :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#position
+:position rdf:type owl:NamedIndividual ,
+                   :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#realTime
+:realTime rdf:type owl:NamedIndividual ,
+                   :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#recorded
+:recorded rdf:type owl:NamedIndividual ,
+                   :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#signLanguage
+:signLanguage rdf:type owl:NamedIndividual ,
+                       :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#simplified
+:simplified rdf:type owl:NamedIndividual ,
+                     :EducationalComplexityType ;
+            rdfs:comment "Simplified instance indicates the requirment of an simple/easy resource"@en ;
+            rdfs:label "Simplified"@en .
+
+
+###  http://purl.org/accessible_ocw#sound
+:sound rdf:type owl:NamedIndividual ,
+                :HazardType .
+
+
+###  http://purl.org/accessible_ocw#structurePresentation
+:structurePresentation rdf:type owl:NamedIndividual ,
+                                :DisplayTransformabilityType .
+
+
+###  http://purl.org/accessible_ocw#symbolic
+:symbolic rdf:type owl:NamedIndividual ,
+                   :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#synthesized
+:synthesized rdf:type owl:NamedIndividual ,
+                      :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#tactile
+:tactile rdf:type owl:NamedIndividual ,
+                  :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#textOnImage
+:textOnImage rdf:type owl:NamedIndividual ,
+                      :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#textual
+:textual rdf:type owl:NamedIndividual ,
+                  :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#transcript
+:transcript rdf:type owl:NamedIndividual ,
+                     :AdaptationType .
+
+
+###  http://purl.org/accessible_ocw#verbatim
+:verbatim rdf:type owl:NamedIndividual ,
+                   :AdaptationDetailType .
+
+
+###  http://purl.org/accessible_ocw#visual
+:visual rdf:type owl:NamedIndividual ,
+                 :AccessModeType ;
+        :accessMode_adaptionRequest :textual .
+
+
+###  http://purl.org/accessible_ocw#visual_alternativeText
+:visual_alternativeText rdf:type owl:NamedIndividual ,
+                                 :RequiredAdaptationType ;
+                        :adaptationType_adaptationRequest :alternativeText ;
+                        :adaptationType_existingAccessMode :visual .
+
+
+###  http://purl.org/accessible_ocw#visual_audioDiscription
+:visual_audioDiscription rdf:type owl:NamedIndividual ,
+                                  :RequiredAdaptationType ;
+                         :adaptationType_adaptationRequest :audioDescription ;
+                         :adaptationType_existingAccessMode :visual .
+
+
+###  http://purl.org/accessible_ocw#visual_textual
+:visual_textual rdf:type owl:NamedIndividual ,
+                         :RequiredAccessMode ;
+                :accessMode_adaptionRequest :textual ;
+                :accessMode_existingAccessMode :visual .
+
+
+###  http://purl.org/accessible_ocw#wordSpacing
+:wordSpacing rdf:type owl:NamedIndividual ,
+                      :DisplayTransformabilityType .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:m rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:e rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:a rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "S2"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasReqAccessMode ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :m
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_existingAccessMode ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :m ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :e
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_adaptionRequest ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :m ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAdaptedAccessMode ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccess ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "S1"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasReqAccessMode ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :m
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_existingAccessMode ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :m ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :e
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_adaptionRequest ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :m ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccessMode ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccess ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
