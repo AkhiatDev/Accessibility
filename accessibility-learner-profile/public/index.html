@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../semantic/out/semantic.min.css">
+        <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+        <script src="../semantic/out/semantic.min.js"></script>
+        <meta charset="utf-8">
+        <title>Learner Profile</title>
+    </head>
+    <body>
+        <div class="ui blue inverted menu">
+          <div class="header item">SlideWiki Prototype</div>
+          <div class="right menu">
+            <div class="item">
+              <div class="ui transparent inverted icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search">
+              </div>
+            </div>
+            <a class="item">Login</a>
+          </div>
+        </div>
+        <div id="root" class="ui page centered grid">
+            <div class="ui form">
+                <div class="eight wide column">
+                    <div class="ui left aligned blue padded segment">
+                        <h2 class="ui left aligned dividing header">Learner Profile</h2>
+                        <div class="ui inline field"><label style="width:150px;">Profile name * </label><div class="ui icon input"><input type="text" id="profile_name" name="profile_name" placeholder="Profile Name" aria-required="true"></div></div>
+                        <div class="ui inline field">
+                            <label style="width:150px;">Language * </label><div class="ui icon input">
+                            <select class="ui inline dropdown" >
+                                  <option value="">Language</option>
+                                  <option value="1">English</option>
+                                  <option value="0">French</option>
+                                </select></div>
+                        </div>
+                        <div class="ui inline field">
+                            <label style="width:150px;">Education Level * </label><div class="ui icon input">
+                            <select class="ui inline dropdown" >
+                                  <option value="">Education Level</option>
+                                  <option value="1">Grade 1</option>
+                                  <option value="0">Grade 3</option>
+                                </select></div>
+                        </div>  
+                        <div class="ui inline field">
+                            <label style="width:150px;">Disability Description</label>
+                            <div class="ui icon button" data-content="Add disability" data-position="bottom right">
+                                <i class="add icon"></i>
+                            </div>
+                            <div class="ui segment">
+                                <div id="accessible_lists" ></div>
+                            </div>
+                        </div>
+
+                        <!--<div class="ui inline field">
+                            <label style="width:150px;">Impairment Type * </label>
+                            <div class="ui icon input" id="accessible_lists">
+                                <!--
+                                <select class="ui inline dropdown" style="width:150px;">
+                                  <option value="">Impairment Type</option>
+                                  <option value="1">Vision Impairment</option>
+                                  <option value="0">Motor Impairment</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                        <div class="ui inline field">
+                            <label style="width:150px;">Disability Type * </label><div class="ui icon input">
+                            <select class="ui inline dropdown" style="width:150px;">
+                                  <option value="">Disability Type</option>
+                                  <option value="1">Color blindness</option>
+                                  <option value="0">Total blindness</option>
+                                </select></div>
+                        </div>
+                 
+                        <div class="ui inline field">
+                            <label style="width:150px;">Assistive Technology * </label>
+                            <div class="ui icon input">
+                                <select class="ui inline dropdown" style="width:150px;">
+                                  <option value="">Assistive Technology</option>
+                                  <option value="1">Braille</option>
+                                  <option value="0">Screen reader</option>
+                                </select>
+                            </div>
+                        </div>
+                        -->
+                        
+                        <div class="ui inline field">
+                            <label style="width:150px;">Preferences </label>
+                            <div class="ui segment">
+                                <div class="ui inline field">
+                                    <label style="width:110px;">Access mode</label>
+                                    <select class="ui dropdown" style="width:120px;">
+                                      <option value="">Access mode</option>
+                                      <option value="1">Visual</option>
+                                      <option value="0">Textual</option>
+                                      <option value="0">Auditory</option>
+                                    </select>
+                                </div>
+                                <div class="ui inline field">
+                                <label style="width:110px;">Hazard Avoidance</label>
+                                <select class="ui dropdown" style="width:120px;">
+                                  <option value="">Hazard Avoidance</option>
+                                  <option value="1">Flashing</option>
+                                  <option value="0">Audio</option>
+                                </select>
+                                </div>
+                                </div>
+                                <div style="display: none;" id="access_mode"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        <script src="bundle.js" charset="utf-8"></script>
+    </body>
+</html>
