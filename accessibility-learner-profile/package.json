@@ -1,0 +1,45 @@
+{
+  "name": "accessibility-learner-profile",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --contentbase public --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Mirette",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "react": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "semantic-ui": "^2.2.7",
+    "sparql-connect": "^0.1.2",
+    "webpack-dev-server": "^1.16.3"
+  },
+  "description": "The accessibility-learner-profile is a form for loading accessibility data from AccessibilityOCW ontology and saving the profile information into ttl. The ontology uses IMS AfA specification and ACCESSIBLE ontology",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EIS-Bonn/Accessibility.git"
+  },
+  "keywords": [
+    "accessibility",
+    "OpenCourseWare",
+    "e-learning",
+    "IMS",
+    "AfA"
+  ],
+  "bugs": {
+    "url": "https://github.com/EIS-Bonn/Accessibility/issues"
+  },
+  "homepage": "https://github.com/EIS-Bonn/Accessibility#readme"
+}
