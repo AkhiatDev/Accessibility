@@ -9,10 +9,10 @@
 @base <http://purl.org/accessible_ocw> .
 
 <http://purl.org/accessible_ocw> rdf:type owl:Ontology ;
-                                  dc:creator "Mirette Elias" ;
-                                  dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html)."@en ;
-                                  dc:title "Accessible OpenCourseWare"@en ;
                                   dc:contributor "Steffen Lohmann" ;
+                                  dc:creator "Mirette Elias" ;
+                                  dc:description "This ontology is designed for accessible OpenCourseWare. It is built on the accessibilty concepts of IMS Learning Global Consortium (https://www.imsglobal.org/activity/accessibility) and the vocabulary structure of the ACCESSIBLE ontology (http://www.accessible-eu.org/index.php/ontology.html). The ontology is published at (https://vocol.iais.fraunhofer.de/accessibilityOnto/)"@en ;
+                                  dc:title "Accessible OpenCourseWare"@en ;
                                   rdfs:label "AccessibleOCW Ontology"@en .
 
 #################################################################
@@ -76,8 +76,7 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                             rdfs:domain :RequiredAccessMode ;
                             rdfs:range :AccessModeType ;
                             rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAccessMode class; given the existing AccessModeType"@en ;
-           rdfs:label "has Adaptation Request"@en .
-
+                            rdfs:label "has Adaptation Request"@en .
 
 
 ###  http://purl.org/accessible_ocw#accessMode_existingAccessMode
@@ -85,7 +84,7 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                                rdfs:domain :RequiredAccessMode ;
                                rdfs:range :AccessModeType ;
                                rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource."@en ;
-           rdfs:label "has Existing AccessMode"@en .
+                               rdfs:label "has Existing AccessMode"@en .
 
 
 ###  http://purl.org/accessible_ocw#adaptationDetail_adaptationRequest
@@ -93,16 +92,15 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                                     rdfs:domain :RequiredAdaptationDetail ;
                                     rdfs:range :AdaptationDetailType ;
                                     rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationDetail class; given the existing AccessModeType"@en ;
-           rdfs:label "has Adaptation Request"@en .
-
+                                    rdfs:label "has Adaptation Request"@en .
 
 
 ###  http://purl.org/accessible_ocw#adaptationDetail_existingAccessMode
 :adaptationDetail_existingAccessMode rdf:type owl:ObjectProperty ;
                                      rdfs:domain :RequiredAdaptationDetail ;
                                      rdfs:range :AccessModeType ;
-                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
-           rdfs:label "has Existing AccessMode"@en .
+                                     rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
+                                     rdfs:label "has Existing AccessMode"@en .
 
 
 ###  http://purl.org/accessible_ocw#adaptationMedia_adaptationRequest
@@ -110,15 +108,7 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                                    rdfs:domain :RequiredAdaptationMedia ;
                                    rdfs:range :AdaptationMediaType ;
                                    rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationMedia class; given the existing AccessModeType"@en ;
-           rdfs:label "has Adaptation Request"@en .
-
-
-###  http://purl.org/accessible_ocw#adaptationMedia_existingAccessMode
-:adaptationMedia_existingAccessMode rdf:type owl:ObjectProperty ;
-                                    rdfs:domain :RequiredAdaptationMedia ;
-                                    rdfs:range :AccessModeType ;
-                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
-           rdfs:label "has Existing AccessMode"@en .
+                                   rdfs:label "has Adaptation Request"@en .
 
 
 ###  http://purl.org/accessible_ocw#adaptationType_adaptationRequest
@@ -126,15 +116,15 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                                   rdfs:domain :RequiredAdaptationType ;
                                   rdfs:range :AdaptationType ;
                                   rdfs:comment "The hasAdaptationRequest property defines the requested adaptation by the RequiredAdaptationType class; given the existing AccessModeType"@en ;
-           rdfs:label "has Adaptation Request"@en .
+                                  rdfs:label "has Adaptation Request"@en .
 
 
-###  http://purl.org/accessible_ocw#adaptationType_existingAccessMode
-:adaptationType_existingAccessMode rdf:type owl:ObjectProperty ;
+###  http://purl.org/accessible_ocw#adaptationType_requiredAccessMode
+:adaptationType_requiredAccessMode rdf:type owl:ObjectProperty ;
                                    rdfs:domain :RequiredAdaptationType ;
-                                   rdfs:range :AccessModeType ;
-                               rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
-           rdfs:label "has Existing AccessMode"@en .
+                                   rdfs:range :RequiredAccessMode ;
+                                   rdfs:comment "The hasExistingAccessMode property defines the existing access mode of a resource. The Learner selects his requested adaptation with respect to existing mode of the resource. "@en ;
+                                   rdfs:label "has Existing AccessMode"@en .
 
 
 ###  http://purl.org/accessible_ocw#hasAccess
@@ -249,9 +239,16 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
                       rdfs:label "has Input Requirements"@en .
 
 
+###  http://purl.org/accessible_ocw#hasReqAccessMode
+:hasReqAccessMode rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Learner ;
+                  rdfs:range :RequiredAccessMode ;
+                  rdfs:label "has Required Access Mode"@en .
+
+
 ###  http://purl.org/accessible_ocw#hasReqAdaptationDetail
 :hasReqAdaptationDetail rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Learner ;
+                        rdfs:domain :RequiredAccessMode ;
                         rdfs:range :RequiredAdaptationDetail ;
                         rdfs:comment "Fine detail of one or more required adaptation types." ;
                         rdfs:label "has Required Adaptation Details"@en .
@@ -259,24 +256,10 @@ GenericOntology:hasName rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/accessible_ocw#hasReqAdaptationMedia
 :hasReqAdaptationMedia rdf:type owl:ObjectProperty ;
-                       rdfs:domain :Learner ;
+                       rdfs:domain :RequiredAccessMode ;
                        rdfs:range :RequiredAdaptationMedia ;
                        rdfs:comment "Requirement for a particular type of media." ;
                        rdfs:label "has Required Adaptation Media"@en .
-
-
-###  http://purl.org/accessible_ocw#hasReqAdaptationType
-:hasReqAdaptationType rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Learner ;
-                      rdfs:range :RequiredAdaptationType ;
-                      rdfs:label "has Required Adaptation Type"@en .
-
-
-###  http://purl.org/accessible_ocw#hasReqAccessMode
-:hasReqAccessMode rdf:type owl:ObjectProperty ;
-                       rdfs:domain :Learner ;
-                       rdfs:range :RequiredAccessMode ;
-                       rdfs:label "has Required Access Mode"@en .
 
 
 ###  http://purl.org/accessible_ocw#isApiInteroperable
@@ -564,61 +547,50 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                 :AdaptationMediaType .
 
 
-###  http://purl.org/accessible_ocw#Learner_1
-:Learner_1 rdf:type owl:NamedIndividual ,
-                    :Learner ;
-           :hasReqAdaptationType :visual_alternativeText ,
-                                 :visual_audioDiscription ;
-           :hasReqAccessMode :visual_textual ;
-           :hasLanguageOfAdaptation "Spanish"^^xsd:string ;
-           :hasLanguageOfInterface "Spanish"^^xsd:string ;
-           :isAtInteroperable "true"^^xsd:boolean ;
-           GenericOntology:Meet "Lena was born blind. She completed her high school but she couldn't find a job." ;
-           GenericOntology:TechnologyUsage "Lena uses her PC (Windows XP) on a daily basis to check her email and apply for jobs. She uses the Jaws screenreader and she also uses OCR software, a Braille embosser and Adobe reader speech output. "^^xsd:string ;
-           GenericOntology:User_has_Disability :Blindness ;
-           GenericOntology:hasAge "20"^^xsd:int ;
-           GenericOntology:hasEducation "High school"^^xsd:string ;
-           GenericOntology:hasJob "Unemployed"^^xsd:string ;
-           GenericOntology:hasLocation "Spain"^^xsd:string ;
-           GenericOntology:hasMaritalStatus "Single"^^xsd:string ;
-           GenericOntology:hasName "Lena Fox"^^xsd:string .
+###  http://purl.org/accessible_ocw#Learner_blindness
+:Learner_blindness rdf:type owl:NamedIndividual ,
+                            :Learner ;
+                   :hasHazardAvoidance :flashing ,
+                                       :motionSimulation ,
+                                       :sound ;
+                   :hasReqAccessMode :auditory_auditory ,
+                                     :auditory_textual ,
+                                     :colour_textual ,
+                                     :orientation_textual ,
+                                     :position_textual ,
+                                     :textOnImage_textual ,
+                                     :textual_textual ,
+                                     :visual_auditory ,
+                                     :visual_textual ;
+                   :isAtInteroperable "true"^^xsd:boolean ;
+                   GenericOntology:User_has_Disability "Blindness" .
 
 
-###  http://purl.org/accessible_ocw#Learner_2
-:Learner_2 rdf:type owl:NamedIndividual ,
-                    :Learner ;
-           :hasHazardAvoidance :flashing ;
-           :hasLanguageOfAdaptation "English"^^xsd:string ;
-           :hasLanguageOfInterface "English"^^xsd:string ;
-           GenericOntology:Meet "James have problems with some colors. He is working as an engineer."^^xsd:string ;
-           GenericOntology:TechnologyUsage "He works on his desktop PC every day, most of the day and is responsible of the network admistration in his company."^^xsd:string ;
-           GenericOntology:User_has_Disability :Colour_Blindness ;
-           GenericOntology:hasAge "25"^^xsd:int ;
-           GenericOntology:hasEducation "Bachelor&rsquo;s degree in Network and Communication"^^xsd:string ;
-           GenericOntology:hasJob "Employed"^^xsd:string ;
-           GenericOntology:hasLocation "Belgium"^^xsd:string ;
-           GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
-           GenericOntology:hasName "James Van"^^xsd:string .
+###  http://purl.org/accessible_ocw#Learner_deaf
+:Learner_deaf rdf:type owl:NamedIndividual ,
+                       :Learner ;
+              :hasReqAccessMode :auditory_textual ;
+              :hasLanguageOfAdaptation "Spanish"^^xsd:string ;
+              :hasLanguageOfInterface "Spanish"^^xsd:string ;
+              GenericOntology:User_has_Disability :Deafness .
 
 
-###  http://purl.org/accessible_ocw#Learner_3
-:Learner_3 rdf:type owl:NamedIndividual ,
-                    :Learner ;
-           :hasReqAdaptationDetail :auditory_verbatim ;
-           :hasReqAdaptationType :auditory_caption ;
-           :hasReqAccessMode :auditory_textual ;
-           :hasLanguageOfAdaptation "Spanish"^^xsd:string ;
-           :hasLanguageOfInterface "Spanish"^^xsd:string ;
-           GenericOntology:Meet "Tomasa is completely deaf. She holds a master&rsquo;s degree in Law, and she works in a consulting firm in Belgium. Since her teenage years, Tomasa is completely deaf. At first, it was very difficult to communicate with other people, but she has learned to cope with her deafness: she mostly uses lip reading to communicate with other people. Sometimes, she also uses some sign language when she is in a company where people also understand it. But as many people don&rsquo;t understand sign language, she doesn&rsquo;t use it very often."^^xsd:string ;
-           GenericOntology:TechnologyUsage "Tomasa is quite a heavy technology user. For work, she has a standard Windows Vista laptop, which she also uses at home and sometimes even in train stations and airports when she is waiting. She spends about 50 hours per week using her computer, it is an important tool for her. At work, Tomasa creates and edits word and excel documents, and searches for information on the internet. She is also a heavy e-mail user, as she has to keep a close contact with her clients without being able to make phonecalls. At home, she manages the pictures of her children growing up and occasionally plays a casual computer game like Tetris. She has already considered switching to Firefox, but still uses Internet Explorer to surf the internet on a daily basis. Tomasa uses Google, Gmail, updates her blog, uses instant messaging to talk to her friends, takes quizzes on Facebook, sometimes watching a video on Youtube, etc. The mobile phone is also very important for Tomasa: she couldn&rsquo;t miss it as a tool. But it is also part of her life style, and she carries is around all the time. She uses it to videocall her husband if she will be home late, and to keep up with her friends. Most important about her phone is the look and feel. It has a big screen displaying clear letters, and it feeds pretty good images when she uses the phone in video calls. Although her smartphone was quite expensive, the device, with all its functionalities, was worth the investment. She mostly uses the phone as any other user would, but as she can&rsquo;t make any regular calls, the video call functionality is very important to her. Besides video call, she uses texting, e-mail (she likes the Qwerty keypad!), and sometimes internet. As the phone has so many features, she thinks it is a pity she can&rsquo;t use all of them, such as the built-in radio receiver, MP3 player, etc. Tomasa uses no assistive technology with her phone."^^xsd:string ;
-           GenericOntology:User_has_Disability :Communication_Disability ,
-                                               :Deafness ;
-           GenericOntology:hasAge "34"^^xsd:int ;
-           GenericOntology:hasEducation "Master's degree in law"^^xsd:string ;
-           GenericOntology:hasJob "Employed"^^xsd:string ;
-           GenericOntology:hasLocation "Barcelona, Spain"^^xsd:string ;
-           GenericOntology:hasMaritalStatus "Married"^^xsd:string ;
-           GenericOntology:hasName "Tomasa Almaraz"^^xsd:string .
+###  http://purl.org/accessible_ocw#Learner_lowVision
+:Learner_lowVision rdf:type owl:NamedIndividual ,
+                            :Learner ;
+                   :hasHazardAvoidance :flashing ;
+                   :hasReqAccessMode :auditory_auditory ,
+                                     :auditory_textual ,
+                                     :colour_textual ,
+                                     :orientation_textual ,
+                                     :position_textual ,
+                                     :textOnImage_textual ,
+                                     :textual_textual ,
+                                     :visual_auditory ,
+                                     :visual_textual ;
+                   :hasLanguageOfAdaptation "English"^^xsd:string ;
+                   :hasLanguageOfInterface "English"^^xsd:string ;
+                   GenericOntology:User_has_Disability :Colour_Blindness .
 
 
 ###  http://purl.org/accessible_ocw#MSAA
@@ -678,11 +650,8 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                    :AccessModeType .
 
 
-###  http://purl.org/accessible_ocw#auditory_caption
-:auditory_caption rdf:type owl:NamedIndividual ,
-                           :RequiredAdaptationType ;
-                  :adaptationType_adaptationRequest :captions ;
-                  :adaptationType_existingAccessMode :auditory .
+###  http://purl.org/accessible_ocw#auditory_auditory
+:auditory_auditory rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/accessible_ocw#auditory_textual
@@ -690,6 +659,13 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                            :RequiredAccessMode ;
                   :accessMode_adaptionRequest :textual ;
                   :accessMode_existingAccessMode :auditory .
+
+
+###  http://purl.org/accessible_ocw#auditory_transcript
+:auditory_transcript rdf:type owl:NamedIndividual ,
+                              :RequiredAdaptationType ;
+                     :adaptationType_adaptationRequest :transcript ;
+                     :adaptationType_requiredAccessMode :auditory_textual .
 
 
 ###  http://purl.org/accessible_ocw#auditory_verbatim
@@ -726,6 +702,10 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                :accessMode_existingAccessMode :color .
 
 
+###  http://purl.org/accessible_ocw#colour_textual
+:colour_textual rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/accessible_ocw#cursorPresentation
 :cursorPresentation rdf:type owl:NamedIndividual ,
                              :DisplayTransformabilityType .
@@ -749,7 +729,7 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                            :DigitalResource ;
                   :hasAccessMode :textual ;
                   :hasAdaptationMediaType :braille ;
-                  :hasAdaptedAccessMode :tactile ;
+                  :hasAdaptedAccessMode :transcript ;
                   :hasControlFlexibility :fullKeyboardControl ;
                   :hasEducationalComplexityOfAdaptation_dr :enriched ;
                   :isAdaptationOf "digitalResource1_URL"^^xsd:anyURI ;
@@ -883,9 +863,17 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                       :AccessModeType .
 
 
+###  http://purl.org/accessible_ocw#orientation_textual
+:orientation_textual rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/accessible_ocw#position
 :position rdf:type owl:NamedIndividual ,
                    :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#position_textual
+:position_textual rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/accessible_ocw#realTime
@@ -940,9 +928,17 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                       :AccessModeType .
 
 
+###  http://purl.org/accessible_ocw#textOnImage_textual
+:textOnImage_textual rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/accessible_ocw#textual
 :textual rdf:type owl:NamedIndividual ,
                   :AccessModeType .
+
+
+###  http://purl.org/accessible_ocw#textual_textual
+:textual_textual rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/accessible_ocw#transcript
@@ -965,14 +961,18 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
 :visual_alternativeText rdf:type owl:NamedIndividual ,
                                  :RequiredAdaptationType ;
                         :adaptationType_adaptationRequest :alternativeText ;
-                        :adaptationType_existingAccessMode :visual .
+                        :adaptationType_requiredAccessMode :visual_textual .
 
 
 ###  http://purl.org/accessible_ocw#visual_audioDiscription
 :visual_audioDiscription rdf:type owl:NamedIndividual ,
                                   :RequiredAdaptationType ;
                          :adaptationType_adaptationRequest :audioDescription ;
-                         :adaptationType_existingAccessMode :visual .
+                         :adaptationType_requiredAccessMode :visual_auditory .
+
+
+###  http://purl.org/accessible_ocw#visual_auditory
+:visual_auditory rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/accessible_ocw#visual_textual
@@ -987,104 +987,4 @@ This dataproperty extends from the DCMI Metadata Terms http://purl.org/dc/terms/
                       :DisplayTransformabilityType .
 
 
-#################################################################
-#    Rules
-#################################################################
-
-:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:m rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:e rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:a rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment ""^^xsd:string ;
-   rdfs:label "S2"^^xsd:string ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasReqAccessMode ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :m
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_existingAccessMode ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :m ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :e
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_adaptionRequest ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :m ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :a
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAdaptedAccessMode ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :y ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccess ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment ""^^xsd:string ;
-   rdfs:label "S1"^^xsd:string ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasReqAccessMode ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :m
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_existingAccessMode ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :m ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :e
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :accessMode_adaptionRequest ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :m ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :a
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccessMode ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :y ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAccess ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
